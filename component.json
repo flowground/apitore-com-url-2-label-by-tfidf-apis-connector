@@ -1,0 +1,51 @@
+{
+    "title": "Url2Label by tfidf APIs",
+    "description": "Url to label by tfidf of contents.<BR />[Endpoint] https://api.apitore.com/api/20",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/apitore.com/url2labelByTfidfApis/0.0.1/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://api.apitore.com/api/20",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "getUsingGET_3": {
+            "main": "./lib/actions/getUsingGET_3.js",
+            "title": "Get labels from URL",
+            "description": "Url2Label by tfidf.<BR />Response<BR />&nbsp; Github: <a href=\"https://github.com/keigohtr/apitore-response-parent/tree/master/summarize-response\">summarize-response</a><BR />&nbsp; Class: com.apitore.banana.response.summarize.LabelResponseEntity<BR />",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getUsingGET_3.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}
